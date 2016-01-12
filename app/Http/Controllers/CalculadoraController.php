@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Validator;
 
 class CalculadoraController extends Controller
 {
@@ -61,14 +62,44 @@ class CalculadoraController extends Controller
     		return view("error", [ "mensaje" => "no ingresaste todos los parametros" ]);
 	}
 
-    public function formulario(Request $request){
-        if($request->has('n1')&& $request->has ('n2')){
-            $n1= $request->input("n1");
-            $n2= $request->input("n2");
-        return view('formulario', ['num1'=> $n1, 'num2' => $n2, 'suma' => $n1 + $n2]);
+    public function form(Request $request){
+        return view('formulario');            
     }
-    return view("error", [ "mensaje" => "no ingresaste todos los parametros" ]);
+
+
+    public function formPost(Request $request){
+        $validator = Validator::make($request->all(), [
+            'n1'        =>'required|numeric',
+            'n2'        =>'required|numeric',
+            'operacion' =>'required'
+        ]);
+
+        if ($validator->fails())
+        {
+            return view('formulario', ["errors" => $validator->errors()->all()]);
+        }
+       
+        $operacion = $request->input("operacion");
+        $n1= $request->input("n1");
+        $n2= $request->input("n2");
+
+
+        if($operacion=='sumar'){
+            return view('formulario', ['result'=>$n1 + $n2]);   
+        }
+        if($operacion=='restar'){
+            return view('formulario', ['result'=>$n1 - $n2]);   
+        }
+        if($operacion=='multiplicar'){
+            return view('formulario', ['result'=>$n1 * $n2]);   
+        }
+        if($operacion=='dividir'){
+            return view('formulario', ['result'=>$n1 / $n2]);
+        }
+        
+        return view("error", [ "mensaje" => "esta malo" ]);            
     }
+    
 }
 
 
