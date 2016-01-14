@@ -24,9 +24,8 @@
 			</div>
 			<div class="col-md-12">
 				<div class="jumbotron">
-					<h1>Glee</h1>
-					<p> Glee es una serie de televisión y comedia musical la cual se emitió por la cadena Fox desde el 19 de mayo de 2009 hasta el 20 de marzo de 2015.1 2 Se centra en el colegio William McKinley High School en el club «New Directions», que rivaliza en el circuito de competición de coros, de una escuela secundaria de Lima, Ohio, donde sus miembros abarcan temas como las relaciones amorosas, la sexualidad y la discriminación. El reparto lo conforma el profesor de español Will Schuester (Matthew Morrison), la entrenadora de las animadoras Sue Sylvester (Jane Lynch), la consejera estudiantil Emma Pillsbury (Jayma Mays), la esposa de Will Terri Schuester (Jessalyn Gilsig) y los ocho miembros del club interpretado por Dianna Agron, Chris Colfer, Kevin McHale, Lea Michele, Cory Monteith, Amber Riley, Mark Salling y Jenna Ushkowitz.</p>
-					
+					<h1>Control de Encuesta </h1>
+					<p>El siguiente formulario tiene por objetivo el confi</p>
 					<!--este boton no esta sirviendo para nada -->
 					<p><a class="btn btn-info btn-lg" href="#" role="button">Leer más</a></p>
 				

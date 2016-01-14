@@ -11,8 +11,31 @@
 |
 */
 
+Route::get("users", function () {
+	return App\User::first()->name;
+});
+
+
+Route::get("encuestas", function () {
+	$encuesta = new App\Encuesta;
+	$encuesta->adress = "Avenida bacan";
+	$encuesta->save();
+	return App\Encuesta::all();
+});
+
+
+
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/encuestas/add', function () {
+    return view('encuesta/add');
+});
+
+Route::get("encuestas/{id}", function ($id) {
+	return App\Encuesta::findOrFail($id);
 });
 
 Route::get('/calculadora/suma', 'CalculadoraController@suma');
@@ -42,4 +65,10 @@ Route::post('/tarea', 'TareaController@PostInicio');
 
 Route::group(['middleware' => ['web']], function () {
     //
+});
+
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });

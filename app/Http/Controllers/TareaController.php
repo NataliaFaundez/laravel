@@ -12,34 +12,33 @@ class TareaController extends Controller
     //
     public function GetInicio(Request $request)
     {
-    	return view('tarea');
+    	return view('welcome');
     }
 
     public function formPost(Request $request){
         $validator = Validator::make($request->all(), [
-            'nombre'        =>'required|',//debe ser palabras, nunca numero o otro
-            'personaje'        =>'required|',
-            'prioridadoperacion' =>'required|numeric'
+            'email'        =>'required| email',
+            'clave'        =>'required|',
+            
         ]);
 
         if ($validator->fails())
         {
-            return view('tarea', ["errors" => $validator->errors()->all()]);
+            return view('welcome', ["errors" => $validator->errors()->all()]);
         }
        
-        $prioridad = $request->input("prioridad");
-        $nombre= $request->input("nombre");
-        $personaje= $request->input("personaje");
+        $email = $request->input("email");
+        $clave= $request->input("clave");
 
 
-        if($operacion=='add'){
-            return view('tarea', ['result'=>$n1 + $n2]);   //result debe mostrar la tabla
+        if($operacion=='opcion1'){
+            return view('tarea', ['result'=>$n1 + $n2]);   //para guarar la opcion correspondiente, guarda contraseña
         }
-        if($operacion=='rest'){
-            return view('tarea', ['result'=>$n1 - $n2]);   //result debe mostrar la tabla
+        if($operacion=='opcion2'){
+            return view('tarea', ['result'=>$n1 - $n2]);   //para guarar la opcion correspondiente, recuperar o cambiar contraseña
         }
-        if($operacion=='cambio'){
-            return view('tarea', ['result'=>$n1 * $n2]); //result debe mostrar la tabla  
+        if($operacion=='opcion3'){
+            return view('tarea', ['result'=>$n1 * $n2]); //para guarar la opcion correspondiente , crea cuenta
         }
         
         
