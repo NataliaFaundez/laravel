@@ -25,6 +25,10 @@ Route::get('/calculadora', 'CalculadoraController@princilpal');
 
 Route::get('/formulario/form', 'CalculadoraController@form');
 Route::post('/formulario/form', 'CalculadoraController@formPost');
+
+Route::get('/tarea', 'TareaController@GetInicio');
+Route::post('/tarea', 'TareaController@PostInicio');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
