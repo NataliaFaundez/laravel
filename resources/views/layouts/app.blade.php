@@ -62,7 +62,7 @@
                         <li role="presentation"><a href="/encuestas/add">Ingresar Encuesta</a></li>
                         <li role="presentation"><a href="#">Editar Encuestas</a></li>
                         <li role="presentation"><a href="#">Ver Encuesta</a></li>
-                        <li role="presentation"><a href="#">Reclamos y Sugerencias</a></li>
+                        <li role="presentation"><a href="/sugerencias">Reclamos y Sugerencias</a></li>
                     </ul>
                 @endif
 

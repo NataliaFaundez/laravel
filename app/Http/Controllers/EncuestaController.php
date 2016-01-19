@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use App\Encuesta;
+use \Auth;
 
 
 class EncuestaController extends Controller
@@ -14,8 +16,8 @@ class EncuestaController extends Controller
 
     public function GetGuardar(Request $request){
 
-    	
-    	 $validator = Validator::make($request->all(), [
+        
+         $validator = Validator::make($request->all(), [
             'folio_a'=>'required|numeric',
             'folio_b'=>'required|digits:1',
             'rut_encuestador'  =>'required',
@@ -35,8 +37,13 @@ class EncuestaController extends Controller
             return view('encuesta.add', ["errors" => $validator->errors()->all()]);
         }
 
-        return "ok";
-       
+        $inputs = $request->all();
+
+        $user = Auth::user();
+
+        $inputs["validador_id"] = $user->id;
+
+        return Encuesta::create($inputs);       
 
     }
 

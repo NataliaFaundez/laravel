@@ -158,6 +158,24 @@
                         <button type="submit" class="btn btn-primary btn-lg">Ingresar Encuesta</button>
                     </div> 
                 </div>
+
+                @if ( isset($errors) )
+        @if (count($errors) > 0)
+
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                <div class="alert alert-info">
+                    <ul>
+                        @foreach ($errors as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+        
+            </div>
+        </div>
+        @endif
+    @endif
              
             </form>
 

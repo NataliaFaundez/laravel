@@ -12,7 +12,7 @@
 <br>
 	<div class="row">
 	  <div class="col-md-6 col-md-offset-4">
-		  <button type="button" class="btn btn-primary btn-lg">Ingresar Encuesta</button>
+		  <button type="submit" class="btn btn-primary btn-lg">Ingresar Encuesta</button>
 	  </div> 
 	</div>
 

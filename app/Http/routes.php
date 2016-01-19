@@ -85,4 +85,8 @@ Route::group(['middleware' => 'web'], function () {
 
        
     Route::post('/encuestas/addsave', 'EncuestaController@GetGuardar');
+
+    Route::get('/sugerencias', function () {
+        return view('opiniones/sugerencia');
+    });
 });

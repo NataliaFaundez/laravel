@@ -14,6 +14,7 @@ class CreateEncuestasTable extends Migration
     {
         Schema::create('encuestas', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('validador_id');
             $table->integer('folio_a');
             $table->integer('folio_b');
             $table->string('rut_encuestador');
@@ -27,7 +28,7 @@ class CreateEncuestasTable extends Migration
             $table->string('contacto1');
             $table->string('contacto2');
             $table->integer('ingreso');
-            $table->integer('observacion');
+            $table->integer('observacion')->nullable();
 
             $table->timestamps();
         });
