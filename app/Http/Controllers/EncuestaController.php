@@ -17,7 +17,7 @@ class EncuestaController extends Controller
     	
     	 $validator = Validator::make($request->all(), [
             'folio_a'=>'required|numeric',
-            'folio_b'=>'required|digits',
+            'folio_b'=>'required|digits:1',
             'rut_encuestador'  =>'required',
             'direccion'  =>'required|alpha',
             'numero'  =>'required|numeric',
