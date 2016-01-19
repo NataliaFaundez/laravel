@@ -60,7 +60,9 @@
                         <li role="presentation" class="active"><a href="#">Inicio</a></li>
                         <li role="presentation"><a href="#">Horarios</a></li>
                         <li role="presentation"><a href="#">Ingresar Encuesta</a></li>
-                        <li role="presentation"><a href="#">Ver encuestas</a></li>
+                        <li role="presentation"><a href="#">Editar Encuestas</a></li>
+                        <li role="presentation"><a href="#">Ver Encuesta</a></li>
+                        <li role="presentation"><a href="#">Reclamos y Sugerencias</a></li>
                     </ul>
                 @endif
 

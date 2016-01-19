@@ -12,7 +12,7 @@
 */
 
 Route::get("users", function () {
-	return App\User::first()->name;
+	return App\User::all()->name;
 });
 
 
@@ -30,16 +30,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/encuestas/add', function () {
-    return view('encuesta/add');
-});
-
-Route::get("/encuestas/{id}", function ($id) {
-	return App\Encuesta::findOrFail($id);
-});
 
 Route::get("/ensayo", function () {
-	return view('encuesta/mostrar');
+	return view('inicio/menu');
 });
 
 
@@ -81,4 +74,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    
+	Route::get('/encuestas/add', function () {
+	    return view('encuesta/add');
+	});
+
+	Route::get("/encuestas/{id}", function ($id) {
+		return App\Encuesta::findOrFail($id);
+	});
 });
