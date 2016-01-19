@@ -58,8 +58,8 @@
                     <ul class="nav navbar-nav navbar-center">
                     <!-- Authentication Links -->
                         <li role="presentation" class="active"><a href="#">Inicio</a></li>
-                        <li role="presentation"><a href="#">Horarios</a></li>
-                        <li role="presentation"><a href="#">Ingresar Encuesta</a></li>
+                        <li role="presentation"><a href="">Horarios</a></li>
+                        <li role="presentation"><a href="/encuestas/add">Ingresar Encuesta</a></li>
                         <li role="presentation"><a href="#">Editar Encuestas</a></li>
                         <li role="presentation"><a href="#">Ver Encuesta</a></li>
                         <li role="presentation"><a href="#">Reclamos y Sugerencias</a></li>
@@ -74,8 +74,8 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
+                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">

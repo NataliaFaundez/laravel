@@ -12,15 +12,15 @@
 */
 
 Route::get("users", function () {
-	return App\User::all()->name;
+    return App\User::all()->name;
 });
 
 
 Route::get("encuestas", function () {
-	$encuesta = new App\Encuesta;
-	$encuesta->adress = "Avenida bacan";
-	$encuesta->save();
-	return App\Encuesta::all();
+    $encuesta = new App\Encuesta;
+    $encuesta->adress = "Avenida bacan";
+    $encuesta->save();
+    return App\Encuesta::all();
 });
 
 
@@ -32,7 +32,7 @@ Route::get('/', function () {
 
 
 Route::get("/ensayo", function () {
-	return view('inicio/menu');
+    return view('inicio/menu');
 });
 
 
@@ -74,12 +74,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
-    
-	Route::get('/encuestas/add', function () {
-	    return view('encuesta/add');
-	});
 
-	Route::get("/encuestas/{id}", function ($id) {
-		return App\Encuesta::findOrFail($id);
-	});
+    Route::get('/encuestas/add', function () {
+        return view('encuesta/add');
+    });
+
+    Route::get("/encuestas/{id}", function ($id) {
+        return App\Encuesta::findOrFail($id);
+    });
+
+       
+    Route::post('/encuestas/addsave', 'EncuestaController@GetGuardar');
 });
