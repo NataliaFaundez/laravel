@@ -2,15 +2,22 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="container">
-		<div class="row">
+ 
+<div class="container">
+	<div class="row">
 
+		<div class="panel panel-primary">
+		  <div class="panel-body">
+    
 			<form class="form-horizontal">
 			  <div class="form-group">
 			    <label for="" class="col-sm-2 control-label">Folio</label>
 			    <div class="col-sm-5">
 			      <input type="text" class="form-control" name="folio" placeholder="ingrese nº de folio ">
-			    </div>
+			    </div> 
+			    <div class="col-sm-1">
+			      <input type="text" class="form-control" name="folio" placeholder=" ">
+			    </div>  			  
 			  </div>
 			  
 			  <div class="form-group">
@@ -18,6 +25,9 @@
 			    <div class="col-sm-5">
 			      <input type="text" class="form-control" name="rut_encuestador" placeholder=" ">
 			    </div>
+			    <div class="col-sm-1">
+			      <input type="text" class="form-control" name="folio" placeholder=" ">
+			    </div>  	
 	 		 </div>
 
 	 		  <div class="form-group">
@@ -58,6 +68,7 @@
 			    <label for="" class="col-sm-2 control-label">Direccion</label>
 			    <div class="col-sm-5">
 			      <input type="text" class="form-control" placeholder=" ">
+			      <span class="help-block">TODO CON MAYUSCULAS</span>
 			    </div>
 	 		  </div>
 
@@ -99,14 +110,16 @@
 	 		 <div class="form-group">
 			    <label for="" class="col-sm-2 control-label">Contacto1</label>
 			    <div class="col-sm-5">
-			      <input type="text" class="form-control" placeholder="ingrese nombre ">
+			      <input type="text" class="form-control" placeholder="Ingrese Nombre ">
+			      <span class="help-block">TODO CON MAYUSCULAS</span>
 			    </div>
 	 		 </div>
 
 	 		 <div class="form-group">
 			    <label for="" class="col-sm-2 control-label">Contacto2</label>
 			    <div class="col-sm-5">
-			      <input type="text" class="form-control" placeholder=" ">
+			      <input type="text" class="form-control" placeholder="Ingrese Nombre ">
+			      <span class="help-block">TODO CON MAYUSCULAS</span>
 			    </div>
 	 		 </div>
 
@@ -131,17 +144,47 @@
 	 		 </div>
 
 	 		 <div class="form-group">
+	 		 	<label for="" class="col-sm-2 control-label">Vehiculos</label>
+			    <div class="col-sm-5">
+		 		 <label class="checkbox-inline">
+				 <input type="checkbox" id="inlineCheckbox1" value="automovil"> automovil
+				 </label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox2" value="camioneta"> camioneta
+				</label>
+				<label class="checkbox-inline">
+				  <input type="checkbox" id="inlineCheckbox3" value="moto"> moto
+				</label>	
+	 		 </div>
+	 		 </div>
+	 		 
+
+	 		 <div class="form-group">
 			    <label for="" class="col-sm-2 control-label">Observacion</label>
 			    <div class="col-sm-5">
 			      <input type="text" class="form-control" placeholder=" ">
+			      <span class="help-block">TODO CON MAYUSCULAS</span>
 			    </div>
 	 		 </div>
+
+	 		 <div class="row">
+				  <div class="col-md-6 col-md-offset-3">
+		 		  <button type="button" class="btn btn-primary btn-lg">Ingresar Encuesta</button>
+			 </div> 
+			 </div>
+	 		 
 
 
 
 </form>
 
+  </div>
+</div>
+
+
 		</div>
 	</div>
+
+</nav>	
  @endsection
 

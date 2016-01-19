@@ -25,7 +25,7 @@ Route::get("encuestas", function () {
 
 
 
-
+//inicio
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,10 +34,20 @@ Route::get('/encuestas/add', function () {
     return view('encuesta/add');
 });
 
-Route::get("encuestas/{id}", function ($id) {
+Route::get("/encuestas/{id}", function ($id) {
 	return App\Encuesta::findOrFail($id);
 });
 
+Route::get("/ensayo", function () {
+	return view('encuesta/mostrar');
+});
+
+
+
+
+
+
+//inicios
 Route::get('/calculadora/suma', 'CalculadoraController@suma');
 
 Route::get('/opera', 'CalculadoraController@operacion');
