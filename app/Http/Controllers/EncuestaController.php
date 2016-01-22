@@ -47,4 +47,9 @@ class EncuestaController extends Controller
 
     }
 
+    public function Index(){
+        $encuestas = Encuesta::all();
+        return view('encuesta.index', ["encuestas" => $encuestas]);
+    }
+
 }

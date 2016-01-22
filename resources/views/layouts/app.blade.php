@@ -60,8 +60,7 @@
                         <li role="presentation" class="active"><a href="#">Inicio</a></li>
                         <li role="presentation"><a href="">Horarios</a></li>
                         <li role="presentation"><a href="/encuestas/add">Ingresar Encuesta</a></li>
-                        <li role="presentation"><a href="#">Editar Encuestas</a></li>
-                        <li role="presentation"><a href="#">Ver Encuesta</a></li>
+                        <li role="presentation"><a href="/encuestas">Encuestas</a></li>
                         <li role="presentation"><a href="/sugerencias">Reclamos y Sugerencias</a></li>
                     </ul>
                 @endif
@@ -73,7 +72,7 @@
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown">
+                        <li class="dropdown"> 
                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="glyphicon glyphicon-user"></span><span class="caret"></span>
                             </a>

@@ -89,4 +89,16 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/sugerencias', function () {
         return view('opiniones/sugerencia');
     });
+
+    Route::get('/encuestas', 'EncuestaController@Index');
+   
 });
+
+
+Route::get('/usuarios', function () {
+
+    $users = App\User::all();
+    return view('usuarios', ["users" => $users]);
+});
+
+
