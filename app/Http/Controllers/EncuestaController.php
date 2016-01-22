@@ -43,8 +43,9 @@ class EncuestaController extends Controller
 
         $inputs["validador_id"] = $user->id;
 
-        return Encuesta::create($inputs);       
+        Encuesta::create($inputs);       
 
+        return redirect('encuestas');
     }
 
     public function Index(){
@@ -52,4 +53,16 @@ class EncuestaController extends Controller
         return view('encuesta.index', ["encuestas" => $encuestas]);
     }
 
+//solo se manda una encuesta
+    public function Mostrar($id){
+        $encuesta = Encuesta::findOrFail($id);
+        return view('encuesta.mostrar', ["encuesta" => $encuesta]);
+    }
+
+    public function Eliminar($id){       
+        $encuesta = Encuesta::findOrFail($id);
+        $encuesta->delete();
+        return redirect('encuestas');
+    }
 }
+

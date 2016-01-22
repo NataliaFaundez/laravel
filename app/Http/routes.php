@@ -79,19 +79,21 @@ Route::group(['middleware' => 'web'], function () {
         return view('encuesta/add');
     });
 
-    Route::get("/encuestas/{id}", function ($id) {
-        return App\Encuesta::findOrFail($id);
-    });
-
        
     Route::post('/encuestas/addsave', 'EncuestaController@GetGuardar');
+
+
 
     Route::get('/sugerencias', function () {
         return view('opiniones/sugerencia');
     });
 
     Route::get('/encuestas', 'EncuestaController@Index');
-   
+
+    Route::get("/encuestas/{id}", 'EncuestaController@Mostrar');
+
+    Route::get("/encuestas/eliminar/{id}", 'EncuestaController@Eliminar');
+    
 });
 
 
